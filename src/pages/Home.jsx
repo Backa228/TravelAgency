@@ -1,8 +1,7 @@
-import Header from '../components/Header.jsx';
+import Header from '../components/Header/Header.jsx';
 
 const Home = () => {
     return <>
-        Hello App!
         <Header/>
     </>
 };

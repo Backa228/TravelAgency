@@ -1,0 +1,26 @@
+.navList{
+    max-width: 518px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listItem{
+    border-bottom: 2px solid transparent;
+}
+
+.listItem:hover{
+    border-bottom: 2px solid #FA8B02;
+}
+
+.listItem.white{
+    color: white;
+}
+
+.listItem.black{
+    color: black;
+}
+
+.itemLink{
+
+}
