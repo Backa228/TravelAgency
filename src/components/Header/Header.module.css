@@ -1,0 +1,14 @@
+.header{ 
+}
+
+.header__container{
+    max-width: 1419px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerRight{
+    display: flex;
+    gap: 10px;
+}

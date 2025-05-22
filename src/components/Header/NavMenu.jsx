@@ -1,4 +1,4 @@
-import style from './NavMenu.module.css'
+import styles from './NavMenu.module.css'
 import clsx from "clsx"
 const NavMenu = ({variant}) => {
     const links = ["Home", "About Us", "Tour Packages", "Contact Us"]
@@ -12,8 +12,8 @@ const NavMenu = ({variant}) => {
         </li>
     )
    return (
-       <nav className={style.nav-links}>
-           <ul className={style.nav-list}>{linksItems}</ul>
+       <nav className={styles.navLinks}>
+           <ul className={styles.navList}>{linksItems}</ul>
         </nav>
     )
 }

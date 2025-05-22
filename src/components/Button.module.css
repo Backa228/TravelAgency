@@ -1,0 +1,22 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FA8B02;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    height: 47px;
+    /* width: 168px; */
+    transition: all ease 0.3s;
+}
+
+.button:hover{
+    box-shadow: 0 4px 6px rgba(51, 51, 51, 0.7);
+}
+
+.button.login{
+    /* background-color: transparent; */
+    background-color: green;
+}
