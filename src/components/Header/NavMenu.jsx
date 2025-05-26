@@ -8,7 +8,7 @@ const NavMenu = ({variant}) => {
             styles["listItem"],
             styles[variant]
            )}>
-            <a href="#">{link} className={styles.itemLinks}</a>
+            <a href="#" className={styles.itemLinks}>{link} </a>
         </li>
     )
    return (

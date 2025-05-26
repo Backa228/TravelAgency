@@ -2,6 +2,7 @@ import Logo from './Logo.jsx'
 import NavMenu from './NavMenu.jsx'
 import Button from '../Button.jsx'
 import styles from './Header.module.css'
+import LangSelector from './LangSelector.jsx'
  
 const Header = () => {
     return (
@@ -10,9 +11,9 @@ const Header = () => {
                 <Logo />
                 <NavMenu variant='white' />
                 <div className={styles.headerRight}>
-                    <Button text="Login" widthBtn={77}
-                    variant='login'/>
-                    <Button text="Sing Up" widthBtn={168}/>
+                    <LangSelector/>
+                    <Button text="Login" widthBtn={77} variant='login'/>
+                    <Button text="Sign Up" widthBtn={168}/>
                 </div>
             </div>
         </header>
