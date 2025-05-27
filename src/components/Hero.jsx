@@ -4,8 +4,12 @@ import styles from './Hero.module.css'
 
 const Hero = () => {
     return (
-        <section className={styles.hero}>
-            <img src={heroBg} alt="Hero-bg" className={styles.heroBg} />
+        <section className={styles.hero} style={{
+            backgroundImage: `url(${heroBg})`,  
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+        }}>
+            {/* <img src={heroBg} alt="Hero-bg" className={styles.heroBg} /> */}
             <div className={styles.hero__container}></div>
         </section>
     )

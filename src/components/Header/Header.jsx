@@ -3,8 +3,10 @@ import NavMenu from './NavMenu.jsx'
 import Button from '../Button.jsx'
 import styles from './Header.module.css'
 import LangSelector from './LangSelector.jsx'
+import { useTranslation } from 'react-i18next'
  
 const Header = () => {
+    const { t } = useTranslation();
     return (
         <header>
             <div className={styles.header__container}>
@@ -12,8 +14,8 @@ const Header = () => {
                 <NavMenu variant='white' />
                 <div className={styles.headerRight}>
                     <LangSelector/>
-                    <Button text="Login" widthBtn={77} variant='login'/>
-                    <Button text="Sign Up" widthBtn={168}/>
+                    <Button text={t("login")} widthBtn={77} variant='login'/>
+                    <Button text={t("signup")} widthBtn={168}/>
                 </div>
             </div>
         </header>
