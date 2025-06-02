@@ -14,8 +14,8 @@ const Header = () => {
                 <NavMenu variant='white' />
                 <div className={styles.headerRight}>
                     <LangSelector/>
-                    <Button text={t("login")} widthBtn={77} variant='login'/>
-                    <Button text={t("signup")} widthBtn={168}/>
+                    <Button text={t('login')} widthBtn={77} variant='login'/>
+                    <Button text={t('signup')} widthBtn={168}/>
                 </div>
             </div>
         </header>

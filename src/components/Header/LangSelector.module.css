@@ -1,17 +1,42 @@
 .lang{
-    width: 60px;
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
     opacity: 0.7;
+    position: relative;
 }
 
 .langSelector{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
     appearance: none;
-    width: 35px;
     background-color: transparent;
     color: white;
     font-size: 20px;
     font-weight: 600;
+}
+
+.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+}
+
+.dropdown button{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.dropdown button:hover{
+    border-bottom: 2px solid #FA8B02;
+}
+
+.dropdown button:disabled{
+    opacity: 0.5;
 }

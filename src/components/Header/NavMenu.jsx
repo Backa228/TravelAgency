@@ -1,14 +1,14 @@
 import styles from './NavMenu.module.css'
 import clsx from "clsx"
-import { useTransition } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const NavMenu = ({ variant }) => {
-    const { t } = useTransition()
-    const links = ["home", "about", "tour", "contact"]
+    const { t } = useTranslation()
+    const links = ['home', 'about', 'tour', 'contact']
     
     const linksItems = links.map(link =>
         <li key={link.id} className={clsx(
-            styles["listItem"],
+            styles['listItem'],
             styles[variant]
            )}>
             <a href="#" className={styles.itemLinks}>{t(link)} </a>
