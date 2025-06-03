@@ -14,6 +14,8 @@ const LangSelector = () => {
 
     const currentLang = i18n.language;
 
+    const currentLangLabel = languages.find(lang => lang.code === currentLang)?.label || currentLang;
+
     const toggleDropdown = () => setOpen((prev) => !prev);
 
     const handleChangeLanguage = (code) => {
@@ -24,12 +26,12 @@ const LangSelector = () => {
     return (
         <div className={styles.lang}>
             <button onClick={toggleDropdown} className={styles.langSelector}>
-                {currentLang}
+                {currentLangLabel}
                 <FaChevronDown size={20} color='white'/>
             </button>
 
-            {open && (
-                <ul className={styles.dropdown}>
+            {/* {open && ( */}
+                <ul className={`${styles.dropdown} ${open ? styles.dropdownOpen : ''}`}>
                     {languages.map((lang) => (
                         <li key={lang.code}>
                             <button 
@@ -39,7 +41,7 @@ const LangSelector = () => {
                         </li>
                     ))}    
                 </ul>
-            )}
+            {/* )} */}
         </div>
     )
 }
