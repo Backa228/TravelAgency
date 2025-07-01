@@ -2,15 +2,39 @@ import styles from './Header.module.css'
 import Logo from './Logo.jsx'
 import NavMenu from './NavMenu.jsx'
 import Button from '../Button.jsx'
-import styles from './Header.module.css'
 import LangSelector from './LangSelector.jsx'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
+import Modal from './Modal.jsx'
+import LoginForm from './LoginForm.jsx'
  
 const Header = () => {
     const { t } = useTranslation();
 
-    const [isModelOpen, setIsModalOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [modalType, setModalType] = useState(null)
+
+    const openModal = (type) => {
+        setModalType(type)
+        setIsModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setModalType(null)
+        setIsModalOpen(false)
+    }
+
+    const getModalContent = () => {
+        switch (modalType) {
+            case 'login': return <LoginForm/>
+            case 'singup': return <SingupForm/>
+            case 'fogotPassword': return <FogotPassForm/>
+            case 'verifyEmail': return <VerifyEmail />
+            case 'newPassword': return <NewPassForm/>
+            case 'resetPassword': return <ResetPass />
+            default: return null
+        }
+    }
 
     return (
         <header>
@@ -19,10 +43,16 @@ const Header = () => {
                 <NavMenu variant='white' />
                 <div className={styles.headerRight}>
                     <LangSelector/>
-                    <Button text={t('login')} widthBtn={77} variant='login'/>
+                    <Button text={t('login')} widthBtn={77} variant='login' onClick={() => openModal('login')}/>
                     <Button text={t('signup')} widthBtn={168}/>
                 </div>
             </div>
+            {isModalOpen && (
+                <Modal onClose={closeModal} title={modalType}>
+                    {getModalContent()}
+                    {/*<LoginFrom*/}
+                </Modal>
+            )}
         </header>
     )
 }

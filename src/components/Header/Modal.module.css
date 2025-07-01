@@ -1,0 +1,44 @@
+.backdrop {
+    position: fixed;
+    inset: 0; /*  => top: 0; right: 0; bottom: 0; left: 0; */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease forwards;
+}
+.modal{
+    background: white;
+    padding: 40px 59px;
+    border-radius: 24px;
+    box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.25);
+    min-width: 488px;
+    position: relative;
+    animation: slideIn 0.3s ease forwards;
+}
+.title{
+    font-size: 32px;
+    font-weight: 700;
+}
+.closeBtn{
+    position: absolute;
+    top: 50px;
+    right: 59px;
+    opacity: 0.7;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0}
+    to{opacity: 1}
+}
+
+@keyframes slideIn {
+    from{
+        opacity: 0;
+        transform: translateY(-30px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
