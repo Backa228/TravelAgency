@@ -1,7 +1,8 @@
 import styles from './LoginForm.module.css'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import * as Yup from 'yup'
+import { IoEyeSharp, IoEyeOffSharp } from "react-icons/io5";
 
 const FeedbackSchema = Yup.object().shape({
     email: Yup.string().email("Must be a valid email!").required("Required"),
@@ -14,6 +15,8 @@ const initialValues = {
 }
 
 const LoginForm = () => {
+    const [showPassword, setShowPassword] = useState(false)
+
     const handleSubmit = (values, actions) => {
         console.log(values)
         actions.resetForm()
@@ -25,19 +28,20 @@ const LoginForm = () => {
     return (
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={FeedbackSchema}>
         <Form className={styles.form}>
-            <label htmlFor={emailFieldId}>Email Address</label>
+            <label htmlFor={emailFieldId} className={styles.label}>Email Address</label>
             <Field id={emailFieldId} type="email" name="email" className={styles.field}></Field>
             <ErrorMessage name="email" component="span" className={styles.error}/>
 
-            <label htmlFor={passwordFieldId}>Email Address</label>
-            <Field id={passwordFieldId} type="password" name="password" className={styles.field}></Field>
+            <label htmlFor={passwordFieldId} className={styles.label}>Password</label>
+                <Field id={passwordFieldId} type={showPassword ? "text" : "password"} name="password" className={styles.field}></Field>
+                <button type="button" onClick={() => setShowPassword(prev => !prev)} className={styles.eye}>
+                    {showPassword ? <IoEyeSharp size={24} color='#ADADAD' /> : <IoEyeOffSharp size={24} color='#ADADAD'/>} 
+                </button>
             <ErrorMessage name="password" component="span" className={styles.error}/>
-           
 
             <button type="submit" className={styles.btn}>Submit</button>
         </Form>
       </Formik>
-        
     )
 }
 export default LoginForm
