@@ -12,10 +12,13 @@ const Modal = ({ onClose, title, children }) => {
 
     return (
         <div className={styles.backdrop} onClick={handleBackdropClick}>
-            <div className={styles.modal} onClick={(e) => e.stopPtopagation}>
-                <h2 className={styles.title}>{title}</h2>
-                <button className={styles.closeBtn} onClick={onClose}><CgClose size={12} /></button>
-                {children}
+            <div className={styles.modal}>
+                <div className={styles.modalContainer}>
+                    <h2 className={styles.title}>{title}</h2>
+                    <button className={styles.closeBtn} onClick={onClose}><CgClose size={12} /></button>
+                    {children}
+                </div>
+                
             </div>
         </div>
     )
